@@ -1,0 +1,81 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "name": "Quiz Upload API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Quiz Question",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "multipart/form-data",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "question",
+              "value": "What is the value of $$\\pi$$ to two decimal places?",
+              "type": "text"
+            },
+            {
+              "key": "options",
+              "value": "[\"3.14\", \"3.141\", \"3.1415\", \"3.14159\"]",
+              "type": "text"
+            },
+            {
+              "key": "correctAnswer",
+              "value": "0",
+              "type": "text"
+            },
+            {
+              "key": "explanation",
+              "value": "The value of $$\\pi$$ to two decimal places is 3.14. This is a commonly used approximation in basic calculations.",
+              "type": "text"
+            },
+            {
+              "key": "questionImage",
+              "type": "file",
+              "src": "/path/to/your/image.jpg"
+            },
+            {
+              "key": "explanationImage",
+              "type": "file",
+              "src": "/path/to/your/explanation.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/quizzes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "quizzes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Quiz Questions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/quizzes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "quizzes"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
